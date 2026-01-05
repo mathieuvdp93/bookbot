@@ -28,8 +28,15 @@ def print_report(file_location, word_count, sorted_char_count):
     print(f"Found {word_count} total words")
     print("--------- Character Count -------")
 
-    for index in sorted_char_count:
-        if index[0].isalpha():
-            print(f"{index[0]}: {index[1]}\n")
+    
+    for single_char_and_count in sorted_char_count:
+        if single_char_and_count[0].isalpha():
+            print(f"{single_char_and_count[0]}: {single_char_and_count[1]}\n")
 
     print("============= END ===============\n")
+
+def check_correct_input(cl_inputs):
+    if len(cl_inputs) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        return False
+    return True
